@@ -1,0 +1,6 @@
+framework module WQAppScoreHelper {
+  umbrella header "WQAppScoreHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}

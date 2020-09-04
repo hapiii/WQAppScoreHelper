@@ -1,0 +1,16 @@
+PODS:
+  - WQAppScoreHelper (0.1.0)
+
+DEPENDENCIES:
+  - WQAppScoreHelper (from `../`)
+
+EXTERNAL SOURCES:
+  WQAppScoreHelper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WQAppScoreHelper: c224c77cca10099df7ef9abfea9f62f20fb7d8d4
+
+PODFILE CHECKSUM: 197f2f7a15c70343ddd4c497e4f20e341f4663d5
+
+COCOAPODS: 1.9.1
