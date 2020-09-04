@@ -1,0 +1,6 @@
+use_frameworks!
+target 'WQAppScoreHelper_Tests' do
+  pod 'WQAppScoreHelper', :path => '../'
+  
+  
+end
