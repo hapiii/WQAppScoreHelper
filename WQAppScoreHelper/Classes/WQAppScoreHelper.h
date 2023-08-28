@@ -29,11 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface WQAppScoreHelper : NSObject
-///appStore评分
+///appStore评分，内部控制
 + (void)gotoStoreScoreWithConfig:(void(^)(WQAppScoreModel *configInfo))configBlock;
-///获取当前ViewController
-+ (UIViewController *)getCurrentVC;
-
+/// 外部控制，直接弹出评分
++ (void)openRatingViewWithAppID:(NSString *)appID;
 @end
 
 NS_ASSUME_NONNULL_END
