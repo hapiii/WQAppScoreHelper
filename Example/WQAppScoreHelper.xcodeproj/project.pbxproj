@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		1738ACEC85A8AB0B71DB87A4 /* Pods-WQAppScoreHelper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WQAppScoreHelper_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WQAppScoreHelper_Tests/Pods-WQAppScoreHelper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2FEB4FDE0655D567FA6EE954 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2FEB4FDE0655D567FA6EE954 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -28,8 +28,8 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		84E5E62C40DA03F609EEB2B1 /* Pods-WQAppScoreHelper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WQAppScoreHelper_Tests.release.xcconfig"; path = "Target Support Files/Pods-WQAppScoreHelper_Tests/Pods-WQAppScoreHelper_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8631DAA7EAED95509009DE60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B8CA0868260B9FC221EEAB85 /* WQAppScoreHelper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WQAppScoreHelper.podspec; path = ../WQAppScoreHelper.podspec; sourceTree = "<group>"; };
+		8631DAA7EAED95509009DE60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B8CA0868260B9FC221EEAB85 /* WQAppScoreHelper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WQAppScoreHelper.podspec; path = ../WQAppScoreHelper.podspec; sourceTree = "<group>"; };
 		E2E845016AE951D9810A74A1 /* Pods_WQAppScoreHelper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WQAppScoreHelper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,7 +114,6 @@
 				1738ACEC85A8AB0B71DB87A4 /* Pods-WQAppScoreHelper_Tests.debug.xcconfig */,
 				84E5E62C40DA03F609EEB2B1 /* Pods-WQAppScoreHelper_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,6 +150,7 @@
 				ORGANIZATIONNAME = hapiii;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
+						DevelopmentTeam = 7BM224Q2NE;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -160,6 +160,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -327,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1738ACEC85A8AB0B71DB87A4 /* Pods-WQAppScoreHelper_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7BM224Q2NE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -351,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84E5E62C40DA03F609EEB2B1 /* Pods-WQAppScoreHelper_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7BM224Q2NE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

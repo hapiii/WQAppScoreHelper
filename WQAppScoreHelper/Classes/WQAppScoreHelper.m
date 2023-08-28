@@ -58,27 +58,34 @@ static NSString *const kHasOpenRatingView = @"kHasOpenRatingView";
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSDate *date = [userDefault objectForKey:kOpenRatingViewDate];
-    BOOL hasRate = [userDefault objectForKey:kHasOpenRatingView];
-    
-    if (date && !hasRate) {
+    BOOL hasRate = [userDefault boolForKey:kHasOpenRatingView];
+    if (hasRate) {
+        return NO;
+    }
+    if (date != nil) {
         if ([WQAppScoreHelper isEarlierThanNow:date]) {//比现在早
-            [userDefault setObject:[WQAppScoreHelper dateByAddingDays:betweenTime] forKey:kOpenRatingViewDate];
-            [userDefault synchronize];
-            return YES;
+            return [self showWithTime:betweenTime];
         }else {
             return NO;
         }
     }else {
-        [userDefault setObject:[WQAppScoreHelper dateByAddingDays:betweenTime] forKey:kOpenRatingViewDate];
-        [userDefault synchronize];
-        return NO;
+        return [self showWithTime:betweenTime];
     }
+}
+
++ (BOOL)showWithTime:(NSInteger)betweenTime {
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:[WQAppScoreHelper dateByAddingDays:betweenTime] forKey:kOpenRatingViewDate];
+    [userDefault setBool:YES forKey:kHasOpenRatingView];
+    [userDefault synchronize];
+    return YES;
 }
 
 + (void)openRatingViewWithAppID:(NSString *)appID {
     
     NSString *nsStringToOpen = [NSString stringWithFormat: @"itms-apps://itunes.apple.com/app/id%@?action=write-review",appID];
-    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    [self.currectKeyWindow endEditing:YES];
     
     if (@available(iOS 10.3, *)) {
         if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {
@@ -107,7 +114,7 @@ static NSString *const kHasOpenRatingView = @"kHasOpenRatingView";
 #pragma mark -  获取当前Controller
 + (UIViewController *)getCurrentVC {
     
-    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *rootViewController = self.currectKeyWindow.rootViewController;
     UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
     
     return currentVC;
@@ -137,6 +144,17 @@ static NSString *const kHasOpenRatingView = @"kHasOpenRatingView";
     return currentVC;
 }
 
-
++ (UIWindow *)currectKeyWindow {
+    
+    UIWindow *keyWindow = nil;
+    NSArray  *windows = [[UIApplication sharedApplication] windows];
+    for (UIWindow  *window in windows) {
+        if (window.isKeyWindow) {
+            keyWindow = window;
+            break;
+        }
+    }
+    return keyWindow;
+}
 
 @end
